@@ -85,13 +85,13 @@ func fetchPlayList() {
  */
 func fetchChannelUrl() string {
 	client := &http.Client{}
-	reqest, err := http.NewRequest("GET", StreamUrl, nil)
-	reqest.Header.Add("Stream-Token", config.Token)
+	request, err := http.NewRequest("GET", StreamUrl, nil)
+	request.Header.Add("Stream-Token", config.Token)
 	if err != nil {
 		panic(err)
 	}
 
-	response, err := client.Do(reqest)
+	response, err := client.Do(request)
 	if err != nil {
 		panic(err)
 	}
